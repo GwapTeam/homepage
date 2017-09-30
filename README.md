@@ -5,7 +5,7 @@ https://github.com/GwapTeam/homepage
 gakken educational homepage texts
 Open html file using chrome.
 
-
+### files
 homepage
 ├── README.md
 ├── complete-homepage.html(Finished code)
@@ -15,21 +15,25 @@ homepage
 ├── homepage.html(First code)
 └── img/
 
+
+### submodule
+vendor file: https://github.com/GwapTeam/vendor
+
 ## Example
 ### clone
 _Branch: `master`_
 ```bash
-$ git clone -b master --recursive -j8 git@github.com:GwapTeam/vendor.git
+$ git clone -b master --recursive -j8 git@github.com:GwapTeam/homepage.git
 ```
 
 _Branch: `development`_
 ```bash
-$ git clone -b development --recursive -j8 git@github.com:GwapTeam/vendor.git
+$ git clone -b development --recursive -j8 git@github.com:GwapTeam/homepage.git
 ```
 
 _Branch: `feature`_
 ```bash
-$ git clone -b feature --recursive -j8 git@github.com:GwapTeam/vendor.git
+$ git clone -b feature --recursive -j8 git@github.com:GwapTeam/homepage.git
 ```
 
 ### pull submodule
@@ -37,8 +41,9 @@ $ git clone -b feature --recursive -j8 git@github.com:GwapTeam/vendor.git
 $ git submodule foreach git pull origin master
 ```
 
-### submodule
-vendor file: https://github.com/GwapTeam/vendor
+<!-- Common Items -->
+
+## Git rules
 
 ### branch
 * master
@@ -54,6 +59,8 @@ The Developer always push the latest code to `feature` branch and push it to` de
 ### commit message
 reference: https://qiita.com/KosukeSone/items/514dd24828b485c69a05
 
+## Coding rules
+
 ### filename
 _HTML, CSS: kebab-case_
 defalut : `original-filename.html`
@@ -61,35 +68,60 @@ defalut : `original-filename.html`
 complete: complete-`original-filename.html`
 
 _JS: camelCase_
-defalut : `original-filename.extension`
+default : `original-filename.extension`
 
 complete: complete-`original-filename.extension`
 
-### JavaScript coding style
-Use [ECMAScript5](http://kangax.github.io/compat-table/es5/)
+### HTML coding style
+
+Use [HTML5](https://www.w3.org/TR/html5/)
+
+Naming conventions: kebab-case
+Tab Space         : 4space
+String literal    : double quote
+
+Case: Relative reference
+```html
+<!— Bad —>
+<script src=“./path/to/filename.js”></script>
+
+<!— Good —>
+<script src=“path/to/filename.js”></script>
+```
+
+### CSS coding style
+
+Use [CSS3](https://developer.mozilla.org/ja/docs/Web/CSS/CSS3)
+
+Naming conventions: kebab-case
+Tab Space         : 4space
+
+### JS coding style
+
+Use [ECMAScript5](https://www.ecma-international.org/ecma-262/6.0/)
+
+Tab Space     : 2space
+String literal: double quote
 
 Case: Variable declaration
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Bad
 ```javascript
+// Bad(ECMAScript6)
 let   variable;
 const constant;
-```
-- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Good
-```javascript
+
+// Good
 var variable;
 ```
 
 Case: anonymous function
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Bad
 ```javascript
+// Bad(ECMAScript6)
 setTimeout(
   _ => console.log('left 1000ms'),
   1000
 )
-```
-- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Good
 
-```javascript
+// Good
 setTimeout(
   function () {
     console.log('left 1000ms');
