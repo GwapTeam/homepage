@@ -34,25 +34,26 @@ complete: complete-`original-filename.extension`
 Use [ECMAScript5](http://kangax.github.io/compat-table/es5/)
 
 Case: Variable declaration
-<font color="DarkRed">Bad</font>
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Bad
 ```javascript
 let   variable;
 const constant;
 ```
-<font color="LimeGreen">Good</font>
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Good
 ```javascript
 var variable;
 ```
 
 Case: anonymous function
-<font color="DarkRed">Bad</font>
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Bad
 ```javascript
 setTimeout(
   _ => console.log('left 1000ms'),
   1000
 )
 ```
-<font color="LimeGreen">Good</font>
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) Good
+
 ```javascript
 setTimeout(
   function () => {
