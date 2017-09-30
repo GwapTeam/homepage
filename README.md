@@ -14,7 +14,7 @@ homepage
 │   ├── .css(Student unedited)
 │   └── homepage(Student editing)
 ├── homepage.html(First code)
-└── i
+└── img/
 ```
 
 ### submodule
@@ -64,11 +64,13 @@ reference: https://qiita.com/KosukeSone/items/514dd24828b485c69a05
 
 ### filename
 _HTML, CSS: kebab-case_
+
 defalut : `original-filename.html`
 
 complete: complete-`original-filename.html`
 
 _JS: snake case_
+
 default : `original_filename.extension`
 
 complete: complete\_`original_filename.extension`
@@ -86,7 +88,7 @@ Case: Relative reference
 <!-- Bad -->
 <script src=“./path/to/filename.js”></script>
 
-<!-- Good--—>
+<!-- Good -—>
 <script src=“path/to/filename.js”></script>
 ```
 
