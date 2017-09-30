@@ -1,11 +1,10 @@
 # homepage
-====
 
 ## Overview
 gakken educational homepage texts
 
 ## Submodule
-vendor file https://github.com/GwapTeam/vendor
+vendor file: https://github.com/GwapTeam/vendor
 
 
 ## branch
@@ -20,22 +19,23 @@ The Teaching Material Creation Team check `development` branch and push it to` m
 The Developer always push the latest code to `feature` branch and push it to` development` branch on completion of the operation check.
 
 ## commit message
-reference: 
+reference: https://qiita.com/KosukeSone/items/514dd24828b485c69a05
 ## Example
 ### clone
-```bash
-$ git clone --recursive -j8 git@github.com:GwapTeam/vendor.git
-```
 _Branch: `master`_
 ```bash
 $ git clone --recursive -j8 git@github.com:GwapTeam/vendor.git
 ```
-_Branch: `development`_
 
+_Branch: `development`_
 ```bash
 $ git clone --recursive -j8 git@github.com:GwapTeam/vendor.git
 ```
+
 _Branch: `feature`_
+```bash
+$ git clone --recursive -j8 git@github.com:GwapTeam/vendor.git
+```
 
 ### pull submodule
 ```
