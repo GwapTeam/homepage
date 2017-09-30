@@ -6,6 +6,7 @@ gakken educational homepage texts
 Open html file using chrome.
 
 ### files
+```
 homepage
 ├── README.md
 ├── complete-homepage.html(Finished code)
@@ -13,8 +14,8 @@ homepage
 │   ├── .css(Student unedited)
 │   └── homepage(Student editing)
 ├── homepage.html(First code)
-└── img/
-
+└── i
+```
 
 ### submodule
 vendor file: https://github.com/GwapTeam/vendor
@@ -67,10 +68,10 @@ defalut : `original-filename.html`
 
 complete: complete-`original-filename.html`
 
-_JS: camelCase_
-default : `original-filename.extension`
+_JS: snake case_
+default : `original_filename.extension`
 
-complete: complete-`original-filename.extension`
+complete: complete\_`original_filename.extension`
 
 ### HTML coding style
 
@@ -82,10 +83,10 @@ String literal    : double quote
 
 Case: Relative reference
 ```html
-<!— Bad —>
+<!-- Bad -->
 <script src=“./path/to/filename.js”></script>
 
-<!— Good —>
+<!-- Good--—>
 <script src=“path/to/filename.js”></script>
 ```
 
