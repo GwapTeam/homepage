@@ -3,6 +3,39 @@ https://github.com/GwapTeam/homepage
 
 ## Overview
 gakken educational homepage texts
+Open html file using chrome.
+
+
+homepage
+├── README.md
+├── complete-homepage.html(Finished code)
+├── css
+│   ├── .css(Student unedited)
+│   └── homepage(Student editing)
+├── homepage.html(First code)
+└── img/
+
+## Example
+### clone
+_Branch: `master`_
+```bash
+$ git clone -b master --recursive -j8 git@github.com:GwapTeam/vendor.git
+```
+
+_Branch: `development`_
+```bash
+$ git clone -b development --recursive -j8 git@github.com:GwapTeam/vendor.git
+```
+
+_Branch: `feature`_
+```bash
+$ git clone -b feature --recursive -j8 git@github.com:GwapTeam/vendor.git
+```
+
+### pull submodule
+```
+$ git submodule foreach git pull origin master
+```
 
 ### submodule
 vendor file: https://github.com/GwapTeam/vendor
@@ -24,10 +57,12 @@ reference: https://qiita.com/KosukeSone/items/514dd24828b485c69a05
 ### filename
 _HTML, CSS: kebab-case_
 defalut : `original-filename.html`
+
 complete: complete-`original-filename.html`
 
 _JS: camelCase_
 defalut : `original-filename.extension`
+
 complete: complete-`original-filename.extension`
 
 ### JavaScript coding style
@@ -56,7 +91,7 @@ setTimeout(
 
 ```javascript
 setTimeout(
-  function () => {
+  function () {
     console.log('left 1000ms');
     return true;
   },
@@ -66,24 +101,3 @@ setTimeout(
 
 reference: http://cou929.nu/data/google_javascript_style_guide/
 
-## Example
-### clone
-_Branch: `master`_
-```bash
-$ git clone --recursive -j8 git@github.com:GwapTeam/vendor.git
-```
-
-_Branch: `development`_
-```bash
-$ git clone --recursive -j8 git@github.com:GwapTeam/vendor.git
-```
-
-_Branch: `feature`_
-```bash
-$ git clone --recursive -j8 git@github.com:GwapTeam/vendor.git
-```
-
-### pull submodule
-```
-$ git submodule foreach git pull origin master
-```
