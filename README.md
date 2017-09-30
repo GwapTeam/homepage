@@ -65,15 +65,17 @@ reference: https://qiita.com/KosukeSone/items/514dd24828b485c69a05
 ### filename
 _HTML, CSS: kebab-case_
 
-defalut : `original-filename.html`
-
-complete: complete-`original-filename.html`
+* defalut : `original-filename.html`
+* complete: complete-`original-filename.html`
 
 _JS: snake case_
 
-default : `original_filename.extension`
+* default : `original_filename.js`
+* complete: complete\_`original_filename.js`
 
-complete: complete\_`original_filename.extension`
+_another files: snake case_
+
+* img : `original_name.extension`
 
 ### HTML coding style
 
