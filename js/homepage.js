@@ -61,43 +61,37 @@ function easeInOutQuad(t, b, c, d) {
 
 function pageAnchorScroll() {
 
-  function scrollTo(element, to) {
+  let scrollTo = (to) => {
     let currentTop = window.pageYOffset;
-
+  
     // http://d.hatena.ne.jp/nakamura001/20111117/1321539246
 
     (function easeScroll(count, i) {
       i += 1;
       if (Math.round(currentTop / 10) == Math.round(to / 10)) return;
       if (i < count) {
-        element.scrollTop = easeInOutQuad(i / 100, currentTop, to - currentTop, 1);
+        window.scroll(0, easeInOutQuad(i / 100, currentTop, to - currentTop, 1));
         setTimeout(
           function () {
             easeScroll(count, i)
-          }, 1);
+          },
+          1
+        );
       }
     })(100, 0);
   }
 
-  let anchor = document.getElementsByTagName('a');
-
-  Array.prototype.map.call(
-    anchor, x => {
-      let hash = x.hash;
-      if (hash != "") {
-        let destinationRect = document.getElementById(hash.replace(/#/g, "")).getBoundingClientRect();
-        {
-          x.addEventListener(
-            "click", y => {
-              y.preventDefault();
-              scrollTo(document.body, destinationRect.top - 80);
-            }
-          )
+  let anchor = Array.from(document.getElementsByTagName("a"));
+  anchor.filter(x => x.hash)
+    .map(x=> {
+      let destinationRect = document.getElementById(x.hash.replace(/#/g, "")).getBoundingClientRect();
+      x.addEventListener(
+        "click", y => {
+          y.preventDefault();
+          scrollTo( destinationRect.top - 80);
         }
-      }
-
-    }
-  );
+      )
+  })
 
 }
 window.addEventListener("load", pageAnchorScroll, false);
