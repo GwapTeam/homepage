@@ -4,15 +4,17 @@
 <head>
 
     <title>ゲーム紹介ホームページ</title>
-    <link href="./css/homepage_1.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <link href="./css/extra_homepage_1.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 
-<nav>
+<nav id="nav">
     <div>
         <a href="#page-top">My Homepage</a>
+        <button onclick=onMenuButtonClick()>メニュー</button>
     </div>
     <ul>
         <li>
@@ -65,7 +67,20 @@
 <iframe id="about" src="../self-introduction/complete-self-introduction.html"></iframe>
 
 <script src="js/homepage.js"></script>
-
+<script>
+    var menuIsVisible = false;
+    var nav = document.getElementById("nav");
+    function onMenuButtonClick() {
+        if (menuIsVisible == true) {
+            nav.children[1].style.display = "none"
+            console.log(nav)
+            menuIsVisible = false;
+        } else {
+            nav.children[1].style.display = "block"
+            menuIsVisible = true;
+        }
+    }
+</script>
 </body>
 
 </html>
