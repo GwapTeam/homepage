@@ -40,13 +40,16 @@ function pageAnchorScroll() {
   let anchor = Array.from(document.getElementsByTagName("a"));
   anchor.filter(x => x.hash)
     .map(x=> {
-      let destinationRect = document.getElementById(x.hash.replace(/#/g, "")).getBoundingClientRect();
-      x.addEventListener(
-        "click", y => {
-          y.preventDefault();
-          scrollTo( destinationRect.top - 80);
-        }
-      )
+      let element = document.getElementById(x.hash.replace(/#/g, ""))
+      if (element) {
+          let destinationRect = element.getBoundingClientRect();
+          x.addEventListener(
+            "click", y => {
+              y.preventDefault();
+              scrollTo( destinationRect.top - 80);
+            }
+          )
+      }
   })
 }
 window.addEventListener("load", pageAnchorScroll, false);
