@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    font-family: fantasy;
+    font-family: cursive;
+    background-color: darkslategray;
 }
 
 nav {
@@ -11,7 +12,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: lightcyan;
+    background-color: crimson;
 }
 
 nav > ul {
@@ -28,29 +29,27 @@ header {
     background: url(../img/bg_11);
 }
 
-h1 {
-    color: white;
-    font-size: 48px;
-    width: fit-content;
-    border-bottom: 1px solid red;
-    margin: 20px auto;
-    -webkit-text-stroke-color: #000;
-    -webkit-text-stroke-width: 1px;
-}
-
+h1,
 p {
-    color: greenyellow;
+    background: rgba(20,20,20,0.5);
+    color: white;
 }
 
 section {
+    margin: 20px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 400px;
+    align-items: flex-start;
+    height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+section:nth-child(2n) {
+    align-items: flex-end;
 }
 
 #easy-quiz {
@@ -73,6 +72,7 @@ iframe {
     width: 100vw;
     height: 100vh;
     border: none;
+    background-color: white;
 }
 
 a {
@@ -82,10 +82,13 @@ a {
 
 nav a {
     margin: 0 8px;
+    color: white;
 }
 
 section a {
-    background: white;
+    background: orange;
+    color: white;
+    font-weight: bold;
     padding: 8px 20px;
     border-radius: 30px;
 }
