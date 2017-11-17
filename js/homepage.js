@@ -1,53 +1,9 @@
 /*
  Homepage JS
  */
-///////////////////////////////////
-// Navigation
-///////////////////////////////////
 if (window.scrollY) {
-  scroll(0, 0); //文書の左上にスクロール位置をリセット
+  scroll(0, 0);
 }
-
-// USE CLASS nav-top nav-middle nav-small-top nav-small-middle
-let nav   = document.getElementsByTagName("nav")[0];
-let title = nav.children[0].getElementsByTagName('a')[0];
-
-const classNames = [
-  'nav-top',
-  'nav-middle',
-  'nav-small-top',
-  'nav-small-middle'
-];
-
-function changeClass(className) {
-  classNames.filter((x) => x != className).map(
-    x => {
-      nav.classList.remove(x)
-    });
-  nav.classList.add(className)
-}
-
-function navigationClass() {
-  let pageY = window.pageYOffset;
-  if (pageY == 0) {
-    if (window.innerWidth > 750) {
-      changeClass('nav-top');
-    } else {
-      changeClass('nav-small-top');
-    }
-  } else {
-    if (window.innerWidth > 750) {
-      changeClass('nav-middle');
-    } else {
-      changeClass('nav-small-middle');
-    }
-  }
-}
-
-window.addEventListener("load", navigationClass, false);
-window.addEventListener("scroll", navigationClass, false);
-window.addEventListener("resize", navigationClass, false);
-
 
 ///////////////////////////////////
 // Page ID Anchor
@@ -84,51 +40,16 @@ function pageAnchorScroll() {
   let anchor = Array.from(document.getElementsByTagName("a"));
   anchor.filter(x => x.hash)
     .map(x=> {
-      let destinationRect = document.getElementById(x.hash.replace(/#/g, "")).getBoundingClientRect();
-      x.addEventListener(
-        "click", y => {
-          y.preventDefault();
-          scrollTo( destinationRect.top - 80);
-        }
-      )
+      let element = document.getElementById(x.hash.replace(/#/g, ""))
+      if (element) {
+          let destinationRect = element.getBoundingClientRect();
+          x.addEventListener(
+            "click", y => {
+              y.preventDefault();
+              scrollTo( destinationRect.top - 80);
+            }
+          )
+      }
   })
-
 }
 window.addEventListener("load", pageAnchorScroll, false);
-
-// FAB Button
-let fab = document.getElementsByTagName('button')[0];
-fab.addEventListener(
-  "click", () => {
-    scrollTo(window.document.body, 0);
-  }
-);
-
-document.body.style.transition                                = "all .3s ease";
-document.getElementById('about').children[1].style.transition = "all .3s ease";
-document.getElementsByTagName('button')[0].style.transition   = "all .3s ease";
-document.getElementById('about').children[1].addEventListener(
-  'click', (x) => {
-    let s  = x.target.style;
-    let s2 = document.getElementsByTagName('button')[0].style;
-    let s3 = document.body.style;
-    let s4 = document.getElementsByTagName("nav")[0].style;
-    if (s.zoom == 1.5) {
-      s.backgroundColor  = '';
-      s.zoom             = 1;
-      s2.right           = '20px';
-      s2.left            = '';
-      s2.backgroundColor = '';
-      s3.background      = '';
-      s4.background      = '';
-    } else {
-      s.backgroundColor  = '#e9e6ff';
-      s.zoom             = 1.5;
-      s2.left            = '20px';
-      s2.right           = '';
-      s2.backgroundColor = '#8800ff';
-      s3.background      = '-webkit-gradient(linear, left top, right bottom, from(red), color-stop(0.2, orange), color-stop(0.3, yellow), color-stop(0.5, green), color-stop(0.7, blue), color-stop(0.8, indigo), to(violet))';
-      s4.background      = '-webkit-gradient(linear, left top, right top, from(#ff0000), to(rgba(255,0,0,0)))';
-    }
-  }
-);
